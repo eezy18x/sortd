@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-undo-batch"
+description = "Enables the undo_batch command without any pre-configured scope."
+commands.allow = ["undo_batch"]
+
+[[permission]]
+identifier = "deny-undo-batch"
+description = "Denies the undo_batch command without any pre-configured scope."
+commands.deny = ["undo_batch"]

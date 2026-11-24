@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-set-recommendation-status"
+description = "Enables the set_recommendation_status command without any pre-configured scope."
+commands.allow = ["set_recommendation_status"]
+
+[[permission]]
+identifier = "deny-set-recommendation-status"
+description = "Denies the set_recommendation_status command without any pre-configured scope."
+commands.deny = ["set_recommendation_status"]

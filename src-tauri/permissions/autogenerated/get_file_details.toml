@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-get-file-details"
+description = "Enables the get_file_details command without any pre-configured scope."
+commands.allow = ["get_file_details"]
+
+[[permission]]
+identifier = "deny-get-file-details"
+description = "Denies the get_file_details command without any pre-configured scope."
+commands.deny = ["get_file_details"]

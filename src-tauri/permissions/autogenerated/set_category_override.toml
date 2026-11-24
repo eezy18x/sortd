@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-set-category-override"
+description = "Enables the set_category_override command without any pre-configured scope."
+commands.allow = ["set_category_override"]
+
+[[permission]]
+identifier = "deny-set-category-override"
+description = "Denies the set_category_override command without any pre-configured scope."
+commands.deny = ["set_category_override"]

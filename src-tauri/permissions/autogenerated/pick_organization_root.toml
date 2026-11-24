@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-pick-organization-root"
+description = "Enables the pick_organization_root command without any pre-configured scope."
+commands.allow = ["pick_organization_root"]
+
+[[permission]]
+identifier = "deny-pick-organization-root"
+description = "Denies the pick_organization_root command without any pre-configured scope."
+commands.deny = ["pick_organization_root"]

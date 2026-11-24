@@ -1,0 +1,178 @@
+@import "tailwindcss";
+
+/*
+ * SORTD design tokens.
+ * Graphite foundation, restrained cyan/teal accents, violet used sparingly.
+ * Dark is the primary theme; light is a first-class equivalent, not an
+ * automatic inversion. Theme is applied via [data-theme] on <html>.
+ */
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root,
+[data-theme="light"] {
+  --bg: #f6f7f8;
+  --surface: #ffffff;
+  --surface-2: #f1f3f5;
+  --surface-3: #e9ecef;
+  --border: #e2e5e9;
+  --border-strong: #cfd4da;
+  --fg: #15181c;
+  --fg-muted: #5c646d;
+  --fg-subtle: #858d96;
+  --accent: #0b8f95;
+  --accent-fg: #ffffff;
+  --accent-soft: #e2f4f5;
+  --teal: #1f8379;
+  --violet: #6a58e0;
+  --violet-soft: #eeebfd;
+  --danger: #c93c3c;
+  --danger-soft: #fbeaea;
+  --warning: #a86b00;
+  --warning-soft: #fbf1dd;
+  --success: #1f8a55;
+  --success-soft: #e3f4ea;
+  --ring: #0b8f95;
+  --chart: #0b8f95;
+  --chart-muted: #c9ced4;
+  --shadow: 0 1px 2px rgb(16 20 24 / 0.06), 0 8px 24px rgb(16 20 24 / 0.06);
+  color-scheme: light;
+}
+
+[data-theme="dark"] {
+  --bg: #0e1013;
+  --surface: #15181c;
+  --surface-2: #1b1f24;
+  --surface-3: #23282e;
+  --border: #252a30;
+  --border-strong: #343a42;
+  --fg: #e7e9ec;
+  --fg-muted: #9aa2ab;
+  --fg-subtle: #6c747d;
+  --accent: #46c9cd;
+  --accent-fg: #071416;
+  --accent-soft: #11292b;
+  --teal: #35a99d;
+  --violet: #9a8cf7;
+  --violet-soft: #221f3a;
+  --danger: #ef7676;
+  --danger-soft: #2f1a1b;
+  --warning: #e3b155;
+  --warning-soft: #2c2415;
+  --success: #57c48d;
+  --success-soft: #142a1f;
+  --ring: #46c9cd;
+  --chart: #46c9cd;
+  --chart-muted: #343a42;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 12px 32px rgb(0 0 0 / 0.35);
+  color-scheme: dark;
+}
+
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-border: var(--border);
+  --color-border-strong: var(--border-strong);
+  --color-fg: var(--fg);
+  --color-muted: var(--fg-muted);
+  --color-subtle: var(--fg-subtle);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --color-accent-soft: var(--accent-soft);
+  --color-teal: var(--teal);
+  --color-violet: var(--violet);
+  --color-violet-soft: var(--violet-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-ring: var(--ring);
+  --font-sans:
+    "Inter Variable", "Inter", "Segoe UI Variable Text", "Segoe UI", -apple-system,
+    BlinkMacSystemFont, system-ui, Ubuntu, Cantarell, "Noto Sans", sans-serif;
+  --font-mono:
+    "JetBrains Mono", "Cascadia Code", "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  --shadow-elevated: var(--shadow);
+  --animate-fade-in: fade-in 140ms ease-out;
+  --animate-pop-in: pop-in 160ms cubic-bezier(0.2, 0.9, 0.3, 1);
+  --animate-slide-in: slide-in 200ms cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+@keyframes indeterminate {
+  0% {
+    left: -35%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+}
+@keyframes pop-in {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.985);
+  }
+}
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(16px);
+  }
+}
+
+@layer base {
+  html,
+  body,
+  #root {
+    height: 100%;
+  }
+  body {
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font-sans);
+    font-size: 13.5px;
+    line-height: 1.45;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "cv11", "ss01";
+    overflow: hidden;
+    user-select: none;
+  }
+  /* Text people may want to copy (paths, names) opts back in. */
+  .selectable,
+  input,
+  textarea {
+    user-select: text;
+  }
+  :focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+    border-radius: 6px;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--accent) 30%, transparent);
+  }
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-strong) transparent;
+  }
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 1ms !important;
+      transition-duration: 1ms !important;
+    }
+  }
+}

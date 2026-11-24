@@ -1,0 +1,11 @@
+# Automatically generated - DO NOT EDIT!
+
+[[permission]]
+identifier = "allow-add-location"
+description = "Enables the add_location command without any pre-configured scope."
+commands.allow = ["add_location"]
+
+[[permission]]
+identifier = "deny-add-location"
+description = "Denies the add_location command without any pre-configured scope."
+commands.deny = ["add_location"]

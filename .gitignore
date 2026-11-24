@@ -1,0 +1,15 @@
+node_modules/
+dist/
+*.local
+.vite/
+coverage/
+src-tauri/target/
+src-tauri/gen/schemas/
+.DS_Store
+Thumbs.db
+*.log
+.env
+.env.*
+.vscode/*
+!.vscode/extensions.json
+.idea/
